@@ -11,6 +11,7 @@ const socket = socketBuilder
     .setOnUserDisconnected((user) => console.log('user disconnected', user))
     .build()
 
+    
 const room = {
     id: Date.now(),
     topic: 'JS Expert eh noix'
@@ -20,3 +21,5 @@ const user = {
     img: 'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/bear_russian_animal_avatar-512.png',
     username: 'Luiz Nascimento'
 }
+
+socket.emit(constants.events.JOIN_ROOM, { user, room })
